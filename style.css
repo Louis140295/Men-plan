@@ -1,0 +1,206 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Times New Roman', Times, serif;
+  color:#000;
+  background: #fff;
+}
+
+.seite {
+  position: relative;
+  width: 910px;
+  height: 1287px;
+  margin: 0 auto;
+  background: #fff;
+  overflow: hidden;
+}
+
+/* ===== Kopfbereich ===== */
+.kopf {
+  position: absolute;
+  top: 0;
+  left: 66px;
+  width: 791px;
+  height: 197px;
+}
+
+.kopf h1 {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  font-size: 17px;
+  line-height: 20px;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.logo {
+  position: absolute;
+  top: 60px;
+  right: 27px;
+  width: 223px;
+  height: 136px;
+}
+
+/* ===== Tabelle ===== */
+main {
+  position: absolute;
+  top: 197px;
+  left: 66px;
+  width: 791px;
+}
+
+table {
+  width: 791px;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 16px;
+}
+
+/* Spaltenbreiten  */
+col:nth-child(1) { width: 97px; }
+col:nth-child(2) { width: 209px; }
+col:nth-child(3) { width: 40px; }
+col:nth-child(4) { width: 174px; }
+col:nth-child(5) { width: 40px; }
+col:nth-child(6) { width: 191px; }
+col:nth-child(7) { width: 40px; }
+
+/* ----- Kopfzeile ----- */
+thead th {
+  height: 47px;
+  background: #d9d9d9;
+  font-size: 15px;
+  font-weight: bold;
+  vertical-align: middle;
+  text-align: center;
+}
+
+thead th:nth-child(1) {
+  text-align: left;
+  padding-left: 4px;
+}
+
+/* kcal-Überschriften: Spalten 3, 5, 7 */
+thead th:nth-child(odd):not(:first-child) {
+  text-align: right;
+  padding-right: 1px;
+}
+
+/* senkrechte Linien vor Vollkost, Leichte Vollkost, Vegetarisch/Vegan */
+thead th:nth-child(even) {
+  border-left: 1px solid #000;
+}
+
+/* ----- Tabellenkörper ----- */
+/* Jeder Tag = 2 Zeilen: ungerade Zeile hat die Datumszelle (rowspan), gerade Zeile nicht */
+tbody td {
+  vertical-align: top;
+  text-align: center;
+  padding: 5px 3px 0;
+  line-height: 19px;
+}
+
+/* Zeilenhöhen (Zeile 1-10) */
+tbody tr:nth-child(1)  { height: 55px; }
+tbody tr:nth-child(2)  { height: 102px; }
+tbody tr:nth-child(3)  { height: 107px; }
+tbody tr:nth-child(4)  { height: 50px; }
+tbody tr:nth-child(5)  { height: 58px; }
+tbody tr:nth-child(6)  { height: 99px; }
+tbody tr:nth-child(7)  { height: 101px; }
+tbody tr:nth-child(8)  { height: 56px; }
+tbody tr:nth-child(9)  { height: 113px; }
+tbody tr:nth-child(10) { height: 48px; }
+
+/* waagerechte Linie am Beginn jedes Tages (jede ungerade Zeile außer der ersten) */
+tbody tr:nth-child(odd) td {
+  border-top: 1px solid #000;
+}
+tbody tr:nth-child(1) td {
+  border-top: 0;
+}
+
+/* Datumszelle */
+tbody tr:nth-child(odd) td:nth-child(1) {
+  text-align: left;
+  padding-left: 4px;
+}
+
+/* senkrechte Linien im Körper:
+   ungerade Zeilen -> Zellen 2, 4, 6 | gerade Zeilen -> Zellen 1, 3, 5 */
+tbody tr:nth-child(odd) td:nth-child(even),
+tbody tr:nth-child(even) td:nth-child(odd) {
+  border-left: 1px solid #000;
+}
+/* die Datumszelle selbst bekommt keine Linie links */
+tbody tr:nth-child(odd) td:nth-child(1) {
+  border-left: 0;
+}
+
+/* kcal-Zellen:
+   ungerade Zeilen -> Zellen 3, 5, 7 | gerade Zeilen -> Zellen 2, 4, 6 */
+tbody tr:nth-child(odd) td:nth-child(odd):not(:first-child),
+tbody tr:nth-child(even) td:nth-child(even) {
+  text-align: right;
+  font-size: 12px;
+  line-height: 12px;
+  padding: 2px 2px 0 0;
+}
+
+/* Allergen-Kürzel unter dem Gericht */
+td small {
+  display: block;
+  font-size: 7.5px;
+  line-height: 9px;
+  margin-top: 1px;
+}
+
+/* ===== Fußbereich ===== */
+footer {
+  position: absolute;
+  top: 1068px;
+  left: 66px;
+  width: 791px;
+}
+
+.hinweis {
+  border-top: 1px solid #000;
+  text-align: right;
+  font-size: 8px;
+  line-height: 10px;
+  padding-top: 1px;
+}
+
+.inhalte p {
+  font-size: 7.4px;
+  line-height: 10px;
+  white-space: nowrap;
+}
+
+.inhalte p + p {
+  margin-top: 5px;
+}
+
+.inhalte {
+  margin-top: 4px;
+}
+
+.adresse {
+  position: absolute;
+  top: 168px;
+  left: 0;
+  font-size: 15px;
+  line-height: 18px;
+  white-space: nowrap;
+}
+
+.adresse span + span {
+  margin-left: 20px;
+}
+
+
